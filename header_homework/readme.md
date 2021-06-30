@@ -1,0 +1,1 @@
+This is a website using html and css to create a formatted header with links to sub-pages and a non-functional search bar
