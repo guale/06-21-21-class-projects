@@ -1,12 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>My Kitchen</title>
+	</head>
+
+	<style>
+		/* Styling for figures to make them display inline with captions beneath */
+		figure {
+			display: inline-block;
+			padding: 5px;
+			background-color: hsl(0, 0%, 75%);
+			margin: 1px;
+		}
+		article {
+			text-align: center;
+			max-width: 700px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	</style>
+
+	<body>
+		<!-- Page header -->
+		<head>
+			<h1 style="text-align: center">My Kitchen</h1>
+		</head>
+
+		<!-- An image of my actual kitchen -->
+		<section style="text-align: center">
+			<img src="images\389520_7b5448ad85.jpg" />
+			<p style="font-size: 7px">(Not my actual kitchen)</p>
+		</section>
+
+		<!-- A description of my kitchen -->
+		<article>
+			<p>
+				My Kitchen is where I prepare my own meals. Its menu varies by
+				day but often includes grilled chicken breast, sausage, or
+				pasta. The house specialty is the fried pork chops with roasted
+				red potatoes. My Kitchen has a very exclusive entry policy,
+				requiring a formal invite to dine.
+			</p>
+		</article>
+
+		<!-- A selection of images of food prepared in my kitchen -->
+		<section style="text-align: center">
+			<figure>
+				<img src="images\food\pork_chops.jpg" />
+				<figcaption style="font-size: 10px">
+					Fried Pork Chops with Roasted Red Potatoes
+				</figcaption>
+			</figure>
+
+			<figure>
+				<img src="images\food\chicken_parm.jpg" />
+				<figcaption style="font-size: 10px">
+					Chicken Parmesean and Spaghetti
+				</figcaption>
+			</figure>
+
+			<figure>
+				<img src="images\food\bulgogi_beef.jpg" />
+				<figcaption style="font-size: 10px">
+					Bulgogi Beef and Egg Fried Rice
+				</figcaption>
+			</figure>
+		</section>
+	</body>
 </html>
