@@ -1,3 +1,52 @@
-body{
+body {
+	margin: 0%;
+}
+
+header {
+	background-color: #000;
+	color: #fff;
+	font-family: Verdana;
+	display: inline-flex;
+	width: 100%;
+	align-items:center;
+	overflow:hidden;
+	height:60px;
+}
+
+header > nav {
+	display: flex;
+}
+
+header nav > a {
+	padding: 60px 20px;
+	color: #fff;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+header nav > a:hover {
+	background-color: #f00;
+}
+
+header nav > a:visited {
+	color: #fff;
+}
+
+header form{	
+	display:inline-flex;
+}
+
+header form >input{
+	border-width: 0px;
+}
+
+#logo {
+	background-color: #f00;
+	padding: 30px 15px;
+}
+
+#search_button{
+	background-color:#f00;
 	margin:0%;
+	padding:1px;
 }
