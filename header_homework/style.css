@@ -1,16 +1,20 @@
 body {
 	margin: 0%;
+	background-color: #aaa;
+	font-family: Verdana;
 }
 
 header {
 	background-color: #000;
 	color: #fff;
-	font-family: Verdana;
 	display: inline-flex;
 	width: 100%;
-	align-items:center;
-	overflow:hidden;
-	height:60px;
+	align-items: center;
+	overflow: hidden;
+	height: 60px;
+	position: fixed;
+	top: 0;
+	z-index: 100;
 }
 
 header > nav {
@@ -32,29 +36,48 @@ header nav > a:visited {
 	color: #fff;
 }
 
-header form{	
-	display:inline-flex;
+header form {
+	display: inline-flex;
 	padding-left: 20px;
 }
 
-header form >input{
+header form > input {
 	border-width: 0px;
 	height: 16px;
 }
 
-header .right{
-	position:absolute;
-	right:10px;
-	text-align:right;
+header .right {
+	position: absolute;
+	right: 10px;
+	text-align: right;
 }
 
-header .right a{
+header .right a {
 	color: #fff;
 	text-decoration: none;
 	font-weight: bold;
 }
 
-header .right a:visited{
+header .right a:visited {
+	color: #fff;
+}
+
+footer {
+	padding-bottom: 10px;
+}
+
+footer nav {
+	text-align: center;
+	color: #fff;
+}
+
+footer nav > a {
+	color: #fff;
+	text-decoration: none;
+	/* font-weight: bold; */
+}
+
+footer nav > a:visited {
 	color: #fff;
 }
 
@@ -63,8 +86,14 @@ header .right a:visited{
 	padding: 30px 15px;
 }
 
-#search_button{
-	background-color:#f00;
-	margin:0%;
-	padding:1px;
+#search_button {
+	background-color: #f00;
+	margin: 0%;
+	padding: 1px;
+}
+
+.container {
+	position: relative;
+	top: 60px;
+	padding-left: 30px;
 }
