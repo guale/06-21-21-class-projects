@@ -36,6 +36,14 @@ header nav > a:visited {
 	color: #fff;
 }
 
+header nav > a.current {
+	background-color: #999;
+}
+
+header nav > a:hover.current {
+	background-color: 999;
+}
+
 header form {
 	display: inline-flex;
 	padding-left: 20px;
@@ -81,6 +89,10 @@ footer nav > a:visited {
 	color: #fff;
 }
 
+p {
+	font-family: "Noto Sans JP", sans-serif;
+}
+
 #logo {
 	background-color: #f00;
 	padding: 30px 15px;
@@ -96,4 +108,17 @@ footer nav > a:visited {
 	position: relative;
 	top: 60px;
 	padding-left: 30px;
+}
+
+.list {
+	float: right;
+	width: 300px;
+	background: #888;
+	margin: 10px;
+	margin-right: 20px;
+	border-bottom: 2px solid #000;
+	border-right: 2px solid #000;
+	box-shadow: 10px 5px 5px #333;
+	padding: 5px 8px 5px 30px;
+	font-family: "Encode Sans SC", sans-serif;
 }
