@@ -1,0 +1,106 @@
+body{
+	background-color:#555;
+}
+#calculator {
+	width: 90%;
+	max-width: 400px;
+	max-height: 600px;
+	margin: auto;
+	margin-top: 20px;
+}
+
+input {
+	text-align: right;
+	background-color:inherit;
+	padding-right:10px;
+}
+
+#display {
+	border-radius: 10px 10px 0px 0px;
+	background-color: black;
+}
+
+#display input {
+	font-family: monospace;
+	font-size: 18pt;
+	box-sizing: border-box;
+	font-weight:bold;
+	color:green;
+}
+
+#inputBox {
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+}
+
+#inputOneBox {
+	width: 100%;
+	border: none;
+}
+
+#operationBox {
+	width: 10%;
+	border: none;
+	background-color:#444;
+	padding:2px 1px;
+	text-align: center;
+}
+
+#inputTwoBox {
+	width: 90%;
+	border: none;
+}
+
+#displayBox {
+	width: 100%;
+	border: none;
+	border-top: solid 2px green;
+	border-radius: 0px;
+}
+
+#buttonBox{
+	display:flex;
+	flex-wrap:wrap;
+	/* padding:10px; */
+	border-radius: 0px 0px 10px 10px
+}
+
+#numberKeys{
+	display:flex;
+	flex-wrap:wrap;
+	width:75%;
+}
+
+#numberKeys button{
+	width:33.333333333% !important;
+}
+
+#buttonBox button {
+	width: 25%;
+	border:none;
+	font-family: monospace;
+	font-size: 18pt;
+	box-sizing: border-box;
+	font-weight:bold;
+	padding: 14px 2px;
+}
+
+#equal{
+	padding-top:140px !important;
+	padding-bottom:14px !important;
+	background-color:lightcyan;
+	border-bottom-right-radius: 10px;
+}
+
+#zero{
+	border-bottom-left-radius: 10px;
+}
+
+.operation{
+	background-color:#aaa;
+}
+
+button:active{
+	background-color:aquamarine !important;
+}

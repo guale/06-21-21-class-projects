@@ -5,7 +5,45 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
-		<script src="script.js" async defer></script>
+		<link rel=stylesheet type=text/css href="assets\style\style.css">
+		<script src="assets\js\script.js" async defer></script>
+		<script src="assets\js\listeners.js" async defer></script>
 	</head>
-	<body></body>
+	<body>
+		<div id="calculator">
+			<div id="display">
+				<div id="inputBox">
+					<input id="inputOneBox" readonly value="0" />
+					<input id="operationBox" readonly />
+					<input id="inputTwoBox" readonly value="0" />
+				</div>
+				<div id="outputBox">
+					<input id="displayBox" readonly value="0" />
+				</div>
+			</div>
+			<div id="buttonBox">
+				<button class="operation" data-action="add">+</button>
+				<button class="operation" data-action="subtract">-</button>
+				<button class="operation" data-action="multiply">
+					&times;
+				</button>
+				<button class="operation" data-action="divide">/</button>
+				<div id="numberKeys">
+					<button>7</button>
+					<button>8</button>
+					<button>9</button>
+					<button>4</button>
+					<button>5</button>
+					<button>6</button>
+					<button>1</button>
+					<button>2</button>
+					<button>3</button>
+					<button id="zero">0</button>
+					<button data-action="decimal">.</button>
+					<button data-action="clear">AC</button>
+				</div>
+				<button id="equal" data-action="calculate">=</button>
+			</div>
+		</div>
+	</body>
 </html>
