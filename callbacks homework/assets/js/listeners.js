@@ -10,6 +10,7 @@ const display = calculator.querySelector("#displayBox");
 let activeBox = inputOne; //used to select which input box the input is entered into
 
 let hasDecimal = false; //used to determine if the current box has a decimal already and does not add decimal if true
+let isInvalid = false; //used to handle invalid solutions i.e. infinity and NaN
 
 keys.addEventListener("click", (e) => {
 	if (e.target.matches("button")) {
@@ -48,27 +49,32 @@ keys.addEventListener("click", (e) => {
 		}
 
 		if (keyClass == "operation") {
-			//if a solution already exists, moves the solution to inputOne and runs clearAll to allow a new operation to be performed on the solution
-			if (hasSolution) {
-				let storedSolution = solution;
+			//if an invalid solution exists operation keys are treated as clearAll to prevent further math from being done on an invalid solution
+			if (isInvalid) {
 				clearAll();
-				inputOne.value = storedSolution;
-			}
-			//if inputOne is the active box, selects the operation and changes activeBox to inputTwo
-			if (activeBox == inputOne) {
-				num1 = parseFloat(inputOne.value);
-				operation = action;
-				hasDecimal = false;
-				operationBox.value = key.innerText;
-				activeBox = inputTwo;
-			} 
-			//if inputTwo is the active box, performs the previously selected operation and places the solution into inputOne and selects the new operation
-			else if (activeBox == inputTwo) {
-				equalKey.click();
-				let storedSolution = solution;
-				clearAll();
-				inputOne.value = storedSolution;
-				key.click();
+			} else {
+				//if a solution already exists, moves the solution to inputOne and runs clearAll to allow a new operation to be performed on the solution
+				if (hasSolution) {
+					let storedSolution = solution;
+					clearAll();
+					inputOne.value = storedSolution;
+				}
+				//if inputOne is the active box, selects the operation and changes activeBox to inputTwo
+				if (activeBox == inputOne) {
+					num1 = parseFloat(inputOne.value);
+					operation = action;
+					hasDecimal = false;
+					operationBox.value = key.innerText;
+					activeBox = inputTwo;
+				}
+				//if inputTwo is the active box, performs the previously selected operation and places the solution into inputOne and selects the new operation
+				else if (activeBox == inputTwo) {
+					equalKey.click();
+					let storedSolution = solution;
+					clearAll();
+					inputOne.value = storedSolution;
+					key.click();
+				}
 			}
 		}
 

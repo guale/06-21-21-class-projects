@@ -23,8 +23,12 @@ let calculate = {
 //calls the appropriate operation method to produce a result
 function equal(num1, num2, operation) {
 	solution = operation(num1, num2);
-	display.value = solution;
 	hasSolution = true;
+	if (solution === Infinity || isNaN(solution)){
+		solution = "Undefined";
+		isInvalid = true;
+	}
+	display.value = solution;
 }
 
 //resets all variables and displays to their initial values
@@ -39,4 +43,5 @@ function clearAll(){
 	operationBox.value = "";
 	activeBox = inputOne;
 	hasSolution = false;
+	isInvalid = false;
 }
