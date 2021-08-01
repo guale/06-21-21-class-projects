@@ -26,16 +26,42 @@
 
 // timedAction();
 
-let url = "https://javascript.info/article/promise-chaining/user.json";
-// let options = "GET";
-let response = fetch(url);
+// let url = "https://javascript.info/article/promise-chaining/user.json";
+// // let options = "GET";
+// let response = fetch(url);
 
-async function getStuff(){
-	let response = await fetch(url);
+// async function getStuff(){
+// 	let response = await fetch(url);
 
-	if(response.ok){
-		let json = await response.json();
-	} else {
-		alert("HTTP-Error: "+response.status);
-	}
-}
+// 	if(response.ok){
+// 		let json = await response.json();
+// 	} else {
+// 		alert("HTTP-Error: "+response.status);
+// 	}
+// }
+
+// async function loadJson(url) {
+// 	let response = await fetch(url);
+
+// 	if (response.ok) {
+// 		return await response.json();
+// 	} else {
+// 		alert("HTTP-Error: " +response.status);
+// 	}
+// }
+
+// loadJson("http://httpstat.us/500");
+
+
+	
+async function wait() {
+	await new Promise(resolve => setTimeout(resolve, 1000));
+   
+	return 10;
+  }
+   
+  function f() {
+	  wait().then(result => console.log(result));
+  }
+
+  f();
