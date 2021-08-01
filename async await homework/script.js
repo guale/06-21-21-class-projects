@@ -1,1 +1,3 @@
+logStuff(getRandomNumber);
+
 getCity("austin");
