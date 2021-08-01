@@ -3,7 +3,7 @@ async function getCity(cityName){
 
 	if(response.ok){
 		let json = await response.json();
-		console.log(`City coordinates: ${json.latt}, ${json.longt}`)
+		console.log(`${json.standard.city} coordinates: ${json.latt}, ${json.longt}`)
 	} else {
 		console.log(`HTTP-Error: ${response.status}`)
 	}
