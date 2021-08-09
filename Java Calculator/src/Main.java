@@ -48,9 +48,9 @@ public class Main {
 				case "power"->{
 					System.out.println("Please enter an integer.");
 					int num1 = scan.nextInt();
-					scan.nextLine();
 					System.out.println("To be raised to the power of a second integer.");
 					int num2 = scan.nextInt();
+					scan.nextLine();
 					System.out.println(Calculator.power(num1,num2));
 				}
 

@@ -34,7 +34,7 @@ public class Calculator {
 	}
 
 	public static double sinDegrees(double num) {
-		num = Math.toDegrees(num);
+		num = Math.toRadians(num);
 		return Math.sin(num);
 	}
 
@@ -43,7 +43,7 @@ public class Calculator {
 	}
 
 	public static double cosDegrees(double num) {
-		num = Math.toDegrees(num);
+		num = Math.toRadians(num);
 		return Math.cos(num);
 	}
 
@@ -52,7 +52,7 @@ public class Calculator {
 	}
 
 	public static double tanDegrees(double num) {
-		num = Math.toDegrees(num);
+		num = Math.toRadians(num);
 		return Math.tan(num);
 	}
 
