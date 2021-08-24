@@ -7,9 +7,10 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.ArrayList;
 import java.util.List;
+import java.util.ListIterator;
+
+import static com.tts.addressbook.service.PhoneNumberServices.*;
 
 @Controller
 public class AddressBookController {
@@ -20,6 +21,9 @@ public class AddressBookController {
 	@GetMapping("/")
 	public String index(Address address, Model model) {
 		List<Address> addresses = addressBookRepository.findAll(Sort.by(Sort.Direction.ASC, "firstName"));
+
+		addresses.forEach(e -> e.setPhoneNumber(formatPhoneNumber(e.getPhoneNumber())));
+
 		model.addAttribute("entries", addresses);
 		return "address/index";
 	}
@@ -31,15 +35,13 @@ public class AddressBookController {
 		} else {
 			address.setFullName(address.getFirstName() + " " + address.getLastName());
 		}
+
+		address.setPhoneNumber(convertToNumbers(address.getPhoneNumber()));
+
 		addressBookRepository.save(address);
 
-		model.addAttribute("firstName", address.getFirstName());
-		model.addAttribute("middleName", address.getMiddleName());
-		model.addAttribute("lastName", address.getLastName());
-		model.addAttribute("fullName", address.getFullName());
-		model.addAttribute("phoneNumber", address.getPhoneNumber());
-		model.addAttribute("emailAddress", address.getEmailAddress());
-		model.addAttribute("comment", address.getComment());
+		address.setPhoneNumber(formatPhoneNumber(address.getPhoneNumber()));
+
 		return "address/result";
 	}
 
@@ -60,7 +62,7 @@ public class AddressBookController {
 		workingAddress.setFirstName(address.getFirstName());
 		workingAddress.setMiddleName(address.getMiddleName());
 		workingAddress.setLastName(address.getLastName());
-		workingAddress.setPhoneNumber(address.getPhoneNumber());
+		workingAddress.setPhoneNumber(convertToNumbers(address.getPhoneNumber()));
 		workingAddress.setEmailAddress(address.getEmailAddress());
 		workingAddress.setComment(address.getComment());
 		if (!address.getMiddleName().equals(null)) {
@@ -68,8 +70,10 @@ public class AddressBookController {
 		} else {
 			address.setFullName(address.getFirstName() + " " + address.getLastName());
 		}
+
 		addressBookRepository.save(address);
-		model.addAttribute("address", workingAddress);
+
+		address.setPhoneNumber(formatPhoneNumber(address.getPhoneNumber()));
 		return "address/result";
 	}
 
