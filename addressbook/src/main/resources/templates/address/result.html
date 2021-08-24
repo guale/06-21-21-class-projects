@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link href="../../webjars/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="container">
+  <h3>Address Added</h3>
+  <h4>Address:</h4>
+  <p th:text="${address.fullName}"/>
+  <p th:text="${address.phoneNumber}"/>
+  <p th:text="${address.emailAddress}"/>
+  <p th:text="${address.comment}"/>
+</div>
+
+
+</body>
+
+</html>

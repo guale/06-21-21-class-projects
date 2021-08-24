@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Address Book</title>
+	<link href="webjars/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/standard.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+	<h1>Address Book</h1>
+
+	<div class="row">
+		<div th:each="address:${entries}">
+			<div class="col-md-6">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<p th:text="${address.fullName}"/>
+					</div>
+					<div class="panel-body">
+						<p th:text="${address.phoneNumber}"/>
+						<p th:text="${address.emailAddress}"/>
+						<p th:text="${address.comment}"/>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+
+<script src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="webjars/jquery/1.9.1/jquery.min.js"></script>
+</body>
+</html>

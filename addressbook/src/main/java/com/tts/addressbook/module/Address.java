@@ -9,7 +9,7 @@ import javax.persistence.Id;
 
 @Entity
 @Data
-public class address {
+public class Address {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -17,10 +17,11 @@ public class address {
 	private String firstName;
 	private String middleName;
 	private String lastName;
-	private String company;
-	private String phone;
+	private String phoneNumber;
 	private String emailAddress;
 	private String comment;
+	private String fullName;
 
-
+	public Address() {
+	}
 }
