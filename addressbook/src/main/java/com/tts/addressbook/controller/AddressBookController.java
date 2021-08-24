@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -87,5 +88,26 @@ public class AddressBookController {
 	public String clearAll(){
 		addressBookRepository.deleteAll();
 		return "address/clearConfirm";
+	}
+
+	@RequestMapping("/addresses/search")
+	public String indexWithQuery(@RequestParam("query") String query, @RequestParam("field") String field, Model model){
+		switch(field){
+			case("firstName"):
+				model.addAttribute("entries", addressBookRepository.findAllByFirstNameContainingOrderByFirstName(query));
+				break;
+			case("lastName"):
+				model.addAttribute("entries", addressBookRepository.findAllByLastNameContainingOrderByFirstName(query));
+				break;
+			case("phoneNumber"):
+				model.addAttribute("entries", addressBookRepository.findAllByPhoneNumberContainingOrderByFirstName(query));
+				break;
+			case("emailAddress"):
+				model.addAttribute("entries", addressBookRepository.findAllByEmailAddressContainingOrderByFirstName(query));
+				break;
+		}
+		model.addAttribute("field", field);
+		model.addAttribute("query", query);
+		return "address/search";
 	}
 }

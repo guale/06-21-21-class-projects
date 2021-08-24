@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Search</title>
+</head>
+<body>
+
+</body>
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Address Book</title>
+  <link href="../../webjars/bootstrap/5.0.1/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div th:replace="fragments/navbar :: navbar"></div>
+
+<div class="container">
+  <h1>Address Book</h1>
+
+  <div class="row">
+    <div th:each="address:${entries}">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header">
+            <h4 th:text="${address.fullName}"/>
+          </div>
+          <ul class="list-group list-group-flush">
+
+            <li class="list-group-item" th:text="${address.phoneNumber}"/>
+            <li class="list-group-item" th:text="${address.emailAddress}"/>
+            <li class="list-group-item" th:text="${address.comment}"/>
+          </ul>
+          <div class="card-footer">
+            <a href="#" th:href="@{/addresses/{id}(id=${address.id})}">
+              <button class="btn btn-success">Edit</button>
+            </a>
+            <a href="#" th:href="@{/addresses/delete/{id}(id=${address.id})}">
+              <button class="btn btn-danger" type="submit">Delete</button>
+            </a>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <a th:href="@{/addresses/new}">
+    <button class="btn btn-primary">New</button>
+  </a>
+  <a th:href="@{/addresses/clear}">
+    <button class="btn btn-danger">Clear</button>
+  </a>
+
+</div>
+
+
+<script src="../../webjars/bootstrap/5.0.1/js/bootstrap.min.js"></script>
+<script src="../../webjars/jquery/1.9.1/jquery.min.js"></script>
+</body>
+</html>

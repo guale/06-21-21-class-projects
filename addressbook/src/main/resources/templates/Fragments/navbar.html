@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Blog Project</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<link href="../../webjars/bootstrap/5.0.1/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div th:fragment="navbar">
+
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<div class="container-fluid">
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+					data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+					aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<li class="nav-item">
+						<a class="nav-link active" aria-current="page" href="/">Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#" th:href="@{/addresses/new}">New</a>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+						   data-bs-toggle="dropdown" aria-expanded="false">
+							Tabs
+						</a>
+						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<li><a class="dropdown-item" href="#">A</a></li>
+							<li><a class="dropdown-item" href="#">B</a></li>
+							<li><a class="dropdown-item" href="#">C</a></li>
+							<li><a class="dropdown-item" href="#">D</a></li>
+							<li><a class="dropdown-item" href="#">E</a></li>
+							<li><a class="dropdown-item" href="#">F</a></li>
+							<li><a class="dropdown-item" href="#">G</a></li>
+							<li><a class="dropdown-item" href="#">H</a></li>
+							<li><a class="dropdown-item" href="#">I</a></li>
+							<li><a class="dropdown-item" href="#">J</a></li>
+							<li><a class="dropdown-item" href="#">K</a></li>
+							<li><a class="dropdown-item" href="#">L</a></li>
+							<li><a class="dropdown-item" href="#">M</a></li>
+							<li><a class="dropdown-item" href="#">N</a></li>
+							<li><a class="dropdown-item" href="#">O</a></li>
+							<li><a class="dropdown-item" href="#">P</a></li>
+							<li><a class="dropdown-item" href="#">Q</a></li>
+							<li><a class="dropdown-item" href="#">R</a></li>
+							<li><a class="dropdown-item" href="#">S</a></li>
+							<li><a class="dropdown-item" href="#">T</a></li>
+							<li><a class="dropdown-item" href="#">U</a></li>
+							<li><a class="dropdown-item" href="#">V</a></li>
+							<li><a class="dropdown-item" href="#">W</a></li>
+							<li><a class="dropdown-item" href="#">X</a></li>
+							<li><a class="dropdown-item" href="#">Y</a></li>
+							<li><a class="dropdown-item" href="#">Z</a></li>
+						</ul>
+					</li>
+				</ul>
+				<form class="d-flex" th:action="@{/addresses/search}">
+					Search by:
+					<select name="field">
+						<option value="firstName">First Name</option>
+						<option value="lastName">Last Name</option>
+						<option value="phoneNumber">Phone Number</option>
+						<option value="emailAddress">Email</option>
+					</select>
+					<input class="form-control me-2" type="text" placeholder="Search" th:name="query" th:value="${query}" aria-label="Search">
+					<button class="btn btn-outline-success" type="submit">Search</button>
+				</form>
+			</div>
+		</div>
+	</nav>
+
+</div>
+
+<script src="../../webjars/bootstrap/5.0.1/js/bootstrap.min.js"></script>
+<script src="../../webjars/jquery/1.9.1/jquery.min.js"></script>
+</body>
+</html>
+
