@@ -8,11 +8,11 @@
 		<version>2.5.4</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.tts.addressBook</groupId>
-	<artifactId>Address-Book</artifactId>
+	<groupId>com.tts</groupId>
+	<artifactId>addressbook</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Address-Book</name>
-	<description>Address Book project with Spring Boot</description>
+	<name>addressbook</name>
+	<description>Address Book Project with TTS</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
