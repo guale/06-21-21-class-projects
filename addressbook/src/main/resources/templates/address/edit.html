@@ -2,14 +2,14 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 	<meta charset="UTF-8">
-	<title>New Address</title>
+	<title>Edit Address</title>
 	<link href="../../webjars/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
 
 <div class="container">
-	<form action="#" th:action="@{/addresses}" th:object="${address}" method="post">
+	<form action="#" th:action="@{/addresses/update/{id}(id=${address.id})}" th:object="${address}" method="post">
 
 		<div class="form-group">
 			<input type="text" class="form-control" placeholder="First Name" th:field="*{firstName}"/>

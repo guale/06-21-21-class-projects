@@ -23,10 +23,26 @@
 						<p th:text="${address.emailAddress}"/>
 						<p th:text="${address.comment}"/>
 					</div>
+					<div class="panel-footer">
+							<a href="#" th:href="@{/addresses/{id}(id=${address.id})}">
+								<button class="btn btn-success">Edit</button>
+							</a>
+							<a href="#" th:href="@{/addresses/delete/{id}(id=${address.id})}">
+								<button class="btn btn-danger" type="submit">Delete</button>
+							</a>
+
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+
+	<a th:href="@{/addresses/new}">
+		<button class="btn btn-primary">New</button>
+	</a>
+	<a th:href="@{/addresses/clear}">
+		<button class="btn btn-danger">Clear</button>
+	</a>
 
 </div>
 
