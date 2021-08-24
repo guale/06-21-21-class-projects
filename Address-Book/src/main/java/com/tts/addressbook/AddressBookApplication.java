@@ -1,4 +1,4 @@
-package com.tts.addressbook;
+package com.tts.addressBook;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

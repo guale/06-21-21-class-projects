@@ -1,4 +1,4 @@
-package com.tts.addressbook.Address.Book;
+package com.tts.addressBook.Address.Book;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
