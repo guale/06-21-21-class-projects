@@ -10,4 +10,5 @@ public interface AddressBookRepository extends JpaRepository<Address, Long> {
 	List<Address> findAllByLastNameContainingOrderByFirstName(String query);
 	List<Address> findAllByPhoneNumberContainingOrderByFirstName(String query);
 	List<Address> findAllByEmailAddressContainingOrderByFirstName(String query);
+	List<Address> findAllByFirstNameStartsWithOrderByFirstName(char letter);
 }

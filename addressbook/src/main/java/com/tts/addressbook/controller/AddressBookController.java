@@ -110,4 +110,10 @@ public class AddressBookController {
 		model.addAttribute("query", query);
 		return "address/search";
 	}
+
+	@RequestMapping("/addresses/tabs/{letter}")
+	public String filterByTab(@PathVariable char letter, Model model){
+		model.addAttribute("entries", addressBookRepository.findAllByFirstNameStartsWithOrderByFirstName(letter));
+		return "address/search";
+	}
 }
