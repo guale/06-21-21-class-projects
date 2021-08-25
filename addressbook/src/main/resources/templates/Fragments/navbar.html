@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-	<title>Blog Project</title>
+	<title></title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 	<link href="../../webjars/bootstrap/5.0.1/css/bootstrap.min.css" rel="stylesheet">
 </head>
@@ -60,14 +60,14 @@
 					</li>
 				</ul>
 				<form class="d-flex" th:action="@{/addresses/search}">
-					Search by:
-					<select name="field">
+					<label for="field">Search by:</label>
+					<select name="field" class="form-select" id="field">
 						<option value="firstName">First Name</option>
 						<option value="lastName">Last Name</option>
 						<option value="phoneNumber">Phone Number</option>
 						<option value="emailAddress">Email</option>
 					</select>
-					<input class="form-control me-2" type="text" placeholder="Search" th:name="query" th:value="${query}" aria-label="Search">
+					<input class="form-control me-2" type="text" placeholder="Search" id="query" th:name="query" th:value="${query}" aria-label="Search">
 					<button class="btn btn-outline-success" type="submit">Search</button>
 				</form>
 			</div>
