@@ -70,6 +70,8 @@ public class AddressBookController {
 		address.setPhoneNumber(convertToNumbers(address.getPhoneNumber()));
 
 		addressBookRepository.save(address);
+		
+		address.setPhoneNumber(formatPhoneNumber(address.getPhoneNumber()));
 
 		return "address/result";
 	}
