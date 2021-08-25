@@ -30,32 +30,7 @@
 							Tabs
 						</a>
 						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<li><a class="dropdown-item" href="#" th:href="@{/addresses/tabs/A}">A</a></li>
-							<li><a class="dropdown-item" href="#" th:href="@{/addresses/tabs/B}">B</a></li>
-							<li><a class="dropdown-item" href="#" th:href="@{/addresses/tabs/C}">C</a></li>
-							<li><a class="dropdown-item" href="#" th:href="@{/addresses/tabs/D}">D</a></li>
-							<li><a class="dropdown-item" href="#" th:href="@{/addresses/tabs/E}">E</a></li>
-							<li><a class="dropdown-item" href="#" th:href="@{/addresses/tabs/F}">F</a></li>
-							<li><a class="dropdown-item" href="#" th:href="@{/addresses/tabs/G}">G</a></li>
-							<li><a class="dropdown-item" href="#" th:href="@{/addresses/tabs/H}">H</a></li>
-							<li><a class="dropdown-item" href="#" th:href="@{/addresses/tabs/I}">I</a></li>
-							<li><a class="dropdown-item" href="#" th:href="@{/addresses/tabs/J}">J</a></li>
-							<li><a class="dropdown-item" href="#" th:href="@{/addresses/tabs/K}">K</a></li>
-							<li><a class="dropdown-item" href="#" th:href="@{/addresses/tabs/L}">L</a></li>
-							<li><a class="dropdown-item" href="#" th:href="@{/addresses/tabs/M}">M</a></li>
-							<li><a class="dropdown-item" href="#" th:href="@{/addresses/tabs/N}">N</a></li>
-							<li><a class="dropdown-item" href="#" th:href="@{/addresses/tabs/O}">O</a></li>
-							<li><a class="dropdown-item" href="#" th:href="@{/addresses/tabs/P}">P</a></li>
-							<li><a class="dropdown-item" href="#" th:href="@{/addresses/tabs/Q}">Q</a></li>
-							<li><a class="dropdown-item" href="#" th:href="@{/addresses/tabs/R}">R</a></li>
-							<li><a class="dropdown-item" href="#" th:href="@{/addresses/tabs/S}">S</a></li>
-							<li><a class="dropdown-item" href="#" th:href="@{/addresses/tabs/T}">T</a></li>
-							<li><a class="dropdown-item" href="#" th:href="@{/addresses/tabs/U}">U</a></li>
-							<li><a class="dropdown-item" href="#" th:href="@{/addresses/tabs/V}">V</a></li>
-							<li><a class="dropdown-item" href="#" th:href="@{/addresses/tabs/W}">W</a></li>
-							<li><a class="dropdown-item" href="#" th:href="@{/addresses/tabs/X}">X</a></li>
-							<li><a class="dropdown-item" href="#" th:href="@{/addresses/tabs/Y}">Y</a></li>
-							<li><a class="dropdown-item" href="#" th:href="@{/addresses/tabs/Z}">Z</a></li>
+							<li th:each="letter : ${alphabet}"><a class="dropdown-item" href="#" th:href="@{/addresses/tabs/{letter}(letter=${letter})}" th:text="${letter}"/></li>
 						</ul>
 					</li>
 				</ul>

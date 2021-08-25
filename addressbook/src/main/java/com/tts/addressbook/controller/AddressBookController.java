@@ -7,6 +7,8 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
 import java.util.List;
 
 import static com.tts.addressbook.service.PhoneNumberServices.*;
@@ -115,5 +117,16 @@ public class AddressBookController {
 	public String filterByTab(@PathVariable char letter, Model model){
 		model.addAttribute("entries", addressBookRepository.findAllByFirstNameIgnoreCaseStartsWithOrderByFirstName(letter));
 		return "address/search";
+	}
+
+	@ModelAttribute
+	public void addAttribute(Model model){
+		List alphabet = new ArrayList();
+		for (int i = 0; i < 26; i++){
+			alphabet.add((char)('A'+i));
+		}
+
+		model.addAttribute("alphabet",alphabet);
+
 	}
 }
