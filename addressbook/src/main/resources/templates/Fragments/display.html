@@ -19,10 +19,9 @@
 					<h4 th:text="${address.fullName}"/>
 				</div>
 				<ul class="list-group list-group-flush">
-
-					<li class="list-group-item" th:text="${address.phoneNumber}"/>
-					<li class="list-group-item" th:text="${address.emailAddress}"/>
-					<li class="list-group-item" th:text="${address.comment}"/>
+					<li class="list-group-item" th:if="${address.phoneNumber != ''}" th:text="${address.phoneNumber}"/>
+					<li class="list-group-item" th:if="${address.emailAddress != ''}" th:text="${address.emailAddress}"/>
+					<li class="list-group-item" th:if="${address.comment != ''}" th:text="${address.comment}"/>
 				</ul>
 				<div class="card-footer">
 					<a href="#" th:href="@{/addresses/{id}(id=${address.id})}" class="btn-anchor">
